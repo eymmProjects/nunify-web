@@ -9,7 +9,7 @@ import Image from "next/image";
 import { CheckIcon } from "@heroicons/react/20/solid";
 import LogoPlaceholder from "@/public/Images/logo-placeholder-image.png";
 
-export default function InfoBlocks({ showImageRight = false }) {
+export default function InfoBlocksHeader({ showImageRight = false }) {
   const dataLink = [
     {
       text: "Do you want to build a website?",
@@ -24,23 +24,42 @@ export default function InfoBlocks({ showImageRight = false }) {
   return (
     <div
       className={`relative isolate ${
-        showImageRight ? "bg-white" : " bg-secondary  text-white"
+        showImageRight ? "bg-secondary  text-white" : " bg-gray-100"
       }`}
     >
+      <div className="pt-14 mx-auto max-w-2xl lg:text-center">
+        <p className="mt-2 text-3xl font-bold tracking-tight text-primary sm:text-4xl">
+          Elevate Your Event Experience with our Event Technology Platform{" "}
+        </p>
+        <h2 className="text-base font-semibold leading-7 text-secondary mt-2 ">
+          To power your next In-Person, Virtual and Hybrid Event{" "}
+        </h2>
+        <p className="mt-6 text-lg leading-8 text-gray-600">
+          Whether you’re getting started or an established pro, our powerful
+          event management platform helps with every phase of event cycle.
+        </p>
+      </div>
       <div
-        className={`mx-auto max-w-7xl px-6 py-4 sm:py-20 lg:flex lg:items-center lg:gap-x-10 lg:px-8 lg:py-10  `}
+        className={`mx-auto max-w-7xl px-3 py-2 sm:py-20 lg:flex lg:items-center  `}
       >
+        <Image
+          src={VideoPlaceholder}
+          width={500}
+          height={500}
+          alt=""
+          className="mt-16 sm:mt-24 lg:mt-0 flex-shrink sm:flex-shrink-0 lg:flex-shrink-0 lg:flex-grow w-full sm:w-auto rounded-lg"
+        />
         <div
           className={`mx-auto max-w-2xl lg:mx-0 lg:flex-auto  ${
-            showImageRight ? "lg:order-last " : ""
+            showImageRight ? "lg:order-last text-white" : ""
           }`}
         >
-          <div className={`py-6 px-6 lg:col-span-2 lg:px-8 lg:py-24 xl:pr-12`}>
+          <div className={`py-3 px-3 lg:col-span-2 lg:px-8 `}>
             <CheckIcon
               className={`${
                 showImageRight
-                  ? "max-h-20 object-contain text-primary lg:col-span-1 shadow-lg rounded-xl "
-                  : " text-white   max-h-20 object-contain lg:col-span-1 bg-secondary rounded-xl shadow-md shadow-slate-500"
+                  ? " text-white max-h-20 object-contain lg:col-span-1"
+                  : "max-h-20 object-contain bg-white text-primary lg:col-span-1 rounded-lg shadow-xl"
               }`}
             />
 
@@ -48,8 +67,8 @@ export default function InfoBlocks({ showImageRight = false }) {
               className={`
             ${
               showImageRight
-                ? " text-sm bold my-8 font-bold leading-7 text-primary"
-                : " text-white text-sm bold my-8 font-bold leading-7 "
+                ? " text-white text-sm bold my-8 font-bold leading-7 "
+                : " text-sm bold my-8 font-bold leading-7 text-primary"
             }
            `}
             >
@@ -58,8 +77,8 @@ export default function InfoBlocks({ showImageRight = false }) {
             <h2
               className={`${
                 showImageRight
-                  ? "text-2xl font-semibold leading-10 text-primary"
-                  : " text-white text-2xl font-semibold leading-10"
+                  ? " text-white text-2xl font-semibold leading-10"
+                  : "text-2xl font-semibold leading-10 text-primary"
               } `}
             >
               Your gateway to a better livestream & On-demand video experienc
@@ -68,8 +87,8 @@ export default function InfoBlocks({ showImageRight = false }) {
             <h2
               className={`${
                 showImageRight
-                  ? "mt-3 text-md   font-normal leading-7 text-gray-600"
-                  : "mt-3 text-md   font-medium leading-7 text-white"
+                  ? "mt-3 text-md   font-medium leading-7 text-white"
+                  : "mt-3 text-md   font-normal leading-7 text-gray-600"
               } `}
             >
               Our live & on-demand video solution is built for events, not
@@ -86,11 +105,7 @@ export default function InfoBlocks({ showImageRight = false }) {
               <a
                 href={button.link}
                 className={`rounded-full bg-primary-green px-8 py-3 text-base font-semibold leading-7 text-white shadow-sm hover:bg-primary-green-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600
-                ${
-                  showImageRight
-                    ? "bg-secondary"
-                    : " bg-textCyan text-secondary"
-                }
+                ${showImageRight ? "bg-textCyan" : " bg-secondary"}
                 `}
               >
                 Learn More
@@ -99,13 +114,6 @@ export default function InfoBlocks({ showImageRight = false }) {
             </div>
           </div>
         </div>
-        <Image
-          src={VideoPlaceholder}
-          width={500}
-          height={500}
-          alt=""
-          className="mt-16 sm:mt-24 lg:mt-0 flex-shrink sm:flex-shrink-0 lg:flex-shrink-0 lg:flex-grow w-full sm:w-auto rounded-lg"
-        />
       </div>
     </div>
   );

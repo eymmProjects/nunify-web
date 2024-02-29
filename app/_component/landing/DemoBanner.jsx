@@ -1,64 +1,29 @@
+import { ChevronRightIcon } from "@heroicons/react/24/outline";
+
 export default function DemoBanner({ text, paragraph }) {
   return (
-    <div className="bg-primary py-16 sm:py-24">
-      <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
-        <div className="relative isolate flex flex-col gap-10 overflow-hidden bg-gray-900 px-6 py-14 shadow-2xl sm:rounded-3xl sm:px-14 xl:flex-row xl:items-center xl:py-22">
-          <div className="flex flex-col">
-            <h2 className="max-w-2xl text-3xl font-bold tracking-tight text-white sm:text-4xl xl:max-w-none xl:flex-auto">
-              {text}
+    <div className="bg-[#312A52] py-6 sm:py-14">
+      <div className="bg-darkPurple text-white border-white  shadow-all-around shadow-violet-950   p-6 rounded-lg d max-w-screen-lg mx-auto">
+        <div className="flex flex-col md:flex-row justify-between items-center">
+          <div className=" max-w-2xl mb-4 md:mb-0">
+            <h2 className="text-xl font-bold mb-8">
+              Ready to test-drive our product?
             </h2>
-            <p className=" text-sm leading-6 text-gray-600 mt-5 ring-inset">
-              <span className="hidden md:inline">{paragraph}</span>
+            <p>
+              Get a guided walk-through of nunify’s event technology platform to
+              experience why we’re setting new standards for webinars, virtual
+              events, in-person events, and Hybrid events!
             </p>
           </div>
-          <form className="w-full max-w-md">
-            <div className="flex gap-x-4">
-              <label htmlFor="email-address" className="sr-only">
-                Email address
-              </label>
-              <input
-                id="email-address"
-                name="email"
-                type="email"
-                autoComplete="email"
-                required
-                className="min-w-0 flex-auto rounded-md border-0 bg-white/5 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-white sm:text-sm sm:leading-6"
-                placeholder="Enter your email"
-              />
-              <button
-                type="submit"
-                className="flex-none rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-              >
-                Book Demo now
-              </button>
-            </div>
-          </form>
-          <svg
-            viewBox="0 0 1024 1024"
-            className="absolute left-1/2 top-1/2 -z-10 h-[64rem] w-[64rem] -translate-x-1/2"
-            aria-hidden="true"
-          >
-            <circle
-              cx={512}
-              cy={512}
-              r={512}
-              fill="url(#759c1415-0410-454c-8f7c-9a820de03641)"
-              fillOpacity="0.7"
-            />
-            <defs>
-              <radialGradient
-                id="759c1415-0410-454c-8f7c-9a820de03641"
-                cx={0}
-                cy={0}
-                r={1}
-                gradientUnits="userSpaceOnUse"
-                gradientTransform="translate(512 512) rotate(90) scale(512)"
-              >
-                <stop stopColor="#7775D6" />
-                <stop offset={1} stopColor="#E935C1" stopOpacity={0} />
-              </radialGradient>
-            </defs>
-          </svg>
+          <div className="flex gap-x-4">
+            <button
+              type="submit"
+              className="flex items-center rounded-full bg-secondary  text-textCyan px-8 py-3 text-sm font-semibold border-2 border-textCyan shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+            >
+              Book Demo now
+              <ChevronRightIcon className=" h-3 w-3 ml-2" />
+            </button>
+          </div>
         </div>
       </div>
     </div>

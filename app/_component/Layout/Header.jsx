@@ -1,7 +1,11 @@
 "use client";
 import { useState } from "react";
 import { Dialog, Menu } from "@headlessui/react";
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import {
+  Bars3Icon,
+  XMarkIcon,
+  ChevronRightIcon,
+} from "@heroicons/react/24/outline";
 import Image from "next/image";
 import Logo from "@/public/Images/white-icon-logo.png";
 import VideoPlaceholder from "@/public/Images/Video-placeholder.png";
@@ -200,10 +204,11 @@ export default function Header() {
       <div className="relative isolate overflow-hidden pt-14 bg-secondary">
         <div className="mx-auto max-w-7xl px-6 py-32 sm:py-40 lg:px-8">
           <div className="mx-auto max-w-2xl lg:mx-0 lg:grid lg:max-w-none lg:grid-cols-2 lg:gap-x-16 lg:gap-y-6 xl:grid-cols-1 xl:grid-rows-1 xl:gap-x-8">
-            <h1 className="max-w-2xl text-4xl font-bold tracking-tight text-white sm:text-6xl lg:col-span-2 xl:col-auto">
-              Stress-Free Event Management Software
-            </h1>
             <div className="mt-6 max-w-xl lg:mt-0 xl:col-end-1 xl:row-start-1">
+              <h1 className="max-w-2xl text-4xl font-bold tracking-tight text-white sm:text-6xl lg:col-span-2 xl:col-auto">
+                Stress-Free
+                <span className="text-textCyan">Event Management Software</span>
+              </h1>
               <p className="text-lg leading-8 text-white my-8">
                 Event Technology you’ll love.
               </p>
@@ -213,23 +218,34 @@ export default function Header() {
                 onsite checkin, gamify your event, and more. It’s everything you
                 need, all from one platform.
               </p>
-              <div className="mt-10 flex items-center gap-x-6">
+              <div className="mt-10 flex  items-center ">
                 <a
                   href="#"
-                  className="rounded-full bg-textCyan px-8 py-2 text-sm font-semibold text-primary shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:text-white focus-visible:outline-indigo-600 hover:text-white"
+                  className="inline-flex rounded-full bg-textCyan px-8 py-4 text-sm font-semibold text-primary shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:text-white focus-visible:outline-indigo-600 hover:text-white"
                 >
                   Talk to us
-                  <i>
-                    <chevronRight className="ml-2 h-5 w-5" aria-hidden="true" />
-                  </i>
+                  <ChevronRightIcon
+                    className="  h-5 w-5 text-primary"
+                    aria-hidden="true"
+                  />
                 </a>
               </div>
             </div>
-            <Image
+            {/* <Image
               src={VideoPlaceholder}
               alt=""
-              className=" mt-10 aspect-[6/5] w-full max-w-lg rounded-md object-cover sm:mt-16 lg:mt-0 lg:max-w-none xl:row-span-2 xl:row-end-2 "
-            />
+              className=" mt-10 aspect-[6/5] w-full max-w-lg object-cover sm:mt-16 lg:mt-0 lg:max-w-none xl:row-span-2 xl:row-end-2 "
+            /> */}
+            <div className="mt-10 max-w-lg w-full sm:mt-16 lg:mt-0 lg:max-w-none xl:row-span-2 xl:row-end-2 overflow-hidden rounded-md">
+              <Image
+                src={VideoPlaceholder}
+                alt=""
+                layout="responsive"
+                width={500}
+                height={500}
+                objectFit="cover"
+              />
+            </div>
           </div>
         </div>
         {/* <div className="absolute inset-x-0 bottom-0 -z-10 h-24 bg-gradient-to-t from-white sm:h-32" /> */}

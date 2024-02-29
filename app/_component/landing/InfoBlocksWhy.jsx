@@ -39,8 +39,8 @@ export default function InfoBlocks({ showImageRight = false }) {
             <h2
               className={`${
                 showImageRight
-                  ? " text-white text-2xl font-semibold leading-10"
-                  : "text-2xl font-semibold leading-10 text-primary"
+                  ? " text-white text-3xl pb-10 font-semibold leading-10"
+                  : "text-5xl font-semibold leading-10 text-primary"
               } `}
             >
               Why choose Nunify ?
@@ -49,7 +49,7 @@ export default function InfoBlocks({ showImageRight = false }) {
             <h2
               className={`${
                 showImageRight
-                  ? "mt-3 text-md   font-medium leading-7 text-white"
+                  ? "mt-3 text-md   font-normal leading-7 text-white"
                   : "mt-3 text-md   font-normal leading-7 text-gray-600"
               } `}
             >
