@@ -8,14 +8,24 @@ import {
 } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import Logo from "@/public/Images/white-icon-logo.png";
+import LogoRios from "@/public/Images/Rios_Logo.png";
 import VideoPlaceholder from "@/public/Images/Video-placeholder.png";
 import Link from "next/link";
 
 const navigation = [
-  { name: "Platform", href: "#" },
   { name: "Solutions", href: "#" },
   { name: "Pricing", href: "#" },
   { name: "Blog", href: "#" },
+  { name: "Company", href: "#" },
+];
+
+const dropdownMenuItems = [
+  { href: "/branding", label: "Branding" },
+  { href: "/marketing", label: "Marketing/ Automation" },
+  { href: "/data", label: "Data" },
+  { href: "/manpower", label: "Manpower" },
+  { href: "/financing", label: "Financing" },
+  { href: "/dispo", label: "Dispo" },
 ];
 
 function classNames(...classes) {
@@ -26,10 +36,11 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null);
   const [hovering, setHovering] = useState(null);
+  const [HoveringPlatform, setHoveringPlatform] = useState(null);
 
   return (
     <div className="bg-primary">
-      <header className="absolute bg-primary inset-x-0 top-0 z-50">
+      <header className="fixed inset-x-0 top-0 z-50  bg-primary ">
         <nav
           onMouseLeave={() => {
             setHovering(null);
@@ -41,7 +52,7 @@ export default function Header() {
             <a href="#" className="-m-1.5 p-1.5">
               <span className="sr-only">Your Company</span>
               {/* <img className="h-8 w-auto" src={Logo} alt="" /> */}
-              <Image className="" src={Logo} alt="" />
+              <Image className="w-20 h-20" src={LogoRios} alt="" />
             </a>
           </div>
           <div className="flex-1 flex items-center justify-end">
@@ -56,19 +67,7 @@ export default function Header() {
               </button>
             </div>
           </div>
-
           <div className="hidden lg:flex lg:gap-x-12">
-            {navigation.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                className="text-sm font-semibold leading-6 text-white"
-              >
-                {item.name}
-              </a>
-            ))}
-
-            {/* dropdown menu */}
             <div className="">
               <a
                 className="flex items-center text-sm font-semibold leading-6 text-white"
@@ -76,7 +75,7 @@ export default function Header() {
                   setHovering(true);
                 }}
               >
-                Company
+                Platform
                 <svg
                   className="ml-2 w-4 h-4"
                   xmlns="http://www.w3.org/2000/svg"
@@ -92,61 +91,45 @@ export default function Header() {
                 </svg>
               </a>
             </div>
+            {navigation.map((item) => (
+              <a
+                key={item.name}
+                href={item.href}
+                className="text-sm font-semibold leading-6 text-white"
+              >
+                {item.name}
+              </a>
+            ))}
+
             {/* dropdown menu end */}
           </div>
           {/* dropdown menuss  */}
+          {/* // Dropdown menu component */}
           {hovering && (
-            // <
             <Menu as="div" className="relative bg-white">
               <div
-                className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-black-400 py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none "
-                style={{ top: "70%", left: "-80px" }}
+                className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-black-400 py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+                style={{ top: "80%", right: "280px" }}
               >
-                <Menu.Item>
-                  {({ active }) => (
-                    <Link
-                      href="/about"
-                      className={classNames(
-                        active ? "bg-gray-300" : "",
-                        "block px-4 py-2 text-sm bg-primary text-gray-200  hover:text-black"
-                      )}
-                    >
-                      About
-                    </Link>
-                  )}
-                </Menu.Item>
-                <Menu.Item>
-                  {({ active }) => (
-                    <Link
-                      href="/blog"
-                      className={classNames(
-                        active ? "bg-gray-300" : "",
-                        "block px-4 py-2 text-sm bg-primary text-gray-200 hover:text-black"
-                      )}
-                    >
-                      Blog
-                    </Link>
-                  )}
-                </Menu.Item>
-                <Menu.Item>
-                  {({ active }) => (
-                    <Link
-                      href="/career"
-                      className={classNames(
-                        active ? "bg-gray-300" : "",
-                        "block px-4 py-2 text-sm bg-primary text-gray-200 hover:text-black"
-                      )}
-                    >
-                      Career
-                    </Link>
-                  )}
-                </Menu.Item>
+                {dropdownMenuItems.map((item) => (
+                  <Menu.Item key={item.href}>
+                    {({ active }) => (
+                      <Link
+                        href={item.href}
+                        className={classNames(
+                          active ? "bg-gray-300" : "",
+                          "block px-4 py-2 text-sm bg-primary text-gray-200 hover:bg-secondary hover:text-white"
+                        )}
+                      >
+                        {item.label}
+                      </Link>
+                    )}
+                  </Menu.Item>
+                ))}
               </div>
             </Menu>
           )}
-
           {/* // */}
-
           <div className="hidden lg:flex  ml-16 lg:justify-end">
             <a href="#" className="text-sm font-semibold leading-6 text-white">
               Log in <span aria-hidden="true">&rarr;</span>
@@ -206,17 +189,18 @@ export default function Header() {
           <div className="mx-auto max-w-2xl lg:mx-0 lg:grid lg:max-w-none lg:grid-cols-2 lg:gap-x-16 lg:gap-y-6 xl:grid-cols-1 xl:grid-rows-1 xl:gap-x-8">
             <div className="mt-6 max-w-xl lg:mt-0 xl:col-end-1 xl:row-start-1">
               <h1 className="max-w-2xl text-4xl font-bold tracking-tight text-white sm:text-6xl lg:col-span-2 xl:col-auto">
-                Stress-Free
-                <span className="text-textCyan">Event Management Software</span>
+                Single Click Real Estate
+                <span className="text-textCyan">Investing Software</span>
               </h1>
               <p className="text-lg leading-8 text-white my-8">
-                Event Technology you’ll love.
+                Replace every Tool you use all in a single place.
               </p>
               <p className="text-lg leading-8 text-white">
-                Collect registrations, manage guest list RSVP, sell tickets,
-                launch your branded event app and event website , speed up
-                onsite checkin, gamify your event, and more. It’s everything you
-                need, all from one platform.
+                Creating a website for inbound marketing, AI auto Follow up,
+                Data Pull and skiptracing, Cold Callers, Lending, Dispo,
+                Contracts and more. Our system will handle every step of your
+                Real Estate Investing business all in one place and all with a
+                single click of a button.
               </p>
               <div className="mt-10 flex  items-center ">
                 <a
@@ -231,11 +215,7 @@ export default function Header() {
                 </a>
               </div>
             </div>
-            {/* <Image
-              src={VideoPlaceholder}
-              alt=""
-              className=" mt-10 aspect-[6/5] w-full max-w-lg object-cover sm:mt-16 lg:mt-0 lg:max-w-none xl:row-span-2 xl:row-end-2 "
-            /> */}
+
             <div className="mt-10 max-w-lg w-full sm:mt-16 lg:mt-0 lg:max-w-none xl:row-span-2 xl:row-end-2 overflow-hidden rounded-md">
               <Image
                 src={VideoPlaceholder}

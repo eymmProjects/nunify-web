@@ -8,15 +8,14 @@ import VideoPlaceholder from "@/public/Images/Video-placeholder.png";
 import Image from "next/image";
 import { CheckIcon } from "@heroicons/react/20/solid";
 import LogoPlaceholder from "@/public/Images/logo-placeholder-image.png";
+import { MdEditDocument } from "react-icons/md";
+import * as Icons from "react-icons/md";
+const ICON_MAP = {
+  MdEditDocument: MdEditDocument,
 
-export default function InfoBlocks({ showImageRight = false }) {
-  const dataLink = [
-    {
-      text: "Do you want to build a website?",
-      link: "/services/it-consulting-services-for-businesses#",
-    },
-  ];
-  // console.log("imageSrc", imageSrc);
+  // Add other icons as necessary
+};
+function InfoBlocks({ data, showImageRight = false, imageUrl }) {
   const button = {
     link: "#",
   };
@@ -36,13 +35,22 @@ export default function InfoBlocks({ showImageRight = false }) {
           }`}
         >
           <div className={`py-6 px-6 lg:col-span-2 lg:px-8 lg:py-24 xl:pr-12`}>
-            <CheckIcon
-              className={`${
-                showImageRight
-                  ? "max-h-20 object-contain text-primary lg:col-span-1 shadow-lg rounded-xl "
-                  : " text-white   max-h-20 object-contain lg:col-span-1 bg-secondary rounded-xl shadow-md shadow-slate-500"
-              }`}
-            />
+            {imageUrl && (
+              <div
+                className={`... ${
+                  showImageRight ? "styles for right" : "shadow-md rounded-md"
+                }`}
+              >
+                {/* Assuming the images are stored in the public directory or an external URL */}
+                <Image
+                  src={imageUrl}
+                  alt="Icon"
+                  className=""
+                  width={100}
+                  height={100}
+                />
+              </div>
+            )}
 
             <h2
               className={`
@@ -53,7 +61,7 @@ export default function InfoBlocks({ showImageRight = false }) {
             }
            `}
             >
-              VIRTUAL STAGE
+              {data.title}
             </h2>
             <h2
               className={`${
@@ -62,7 +70,7 @@ export default function InfoBlocks({ showImageRight = false }) {
                   : " text-white text-2xl font-semibold leading-10"
               } `}
             >
-              Your gateway to a better livestream & On-demand video experienc
+              {data.subtitle}
             </h2>
 
             <h2
@@ -72,11 +80,7 @@ export default function InfoBlocks({ showImageRight = false }) {
                   : "mt-3 text-md   font-medium leading-7 text-white"
               } `}
             >
-              Our live & on-demand video solution is built for events, not
-              meetings. We know you need flexible streaming experiences – go
-              live from a web-camera or a studio or stream a 4K video with no
-              lag/sound issues or integrate Zoom. We have all video capabilities
-              to streamline your virtual experience and wow remote guests.
+              {data.content}
             </h2>
             <ul
               role="list"
@@ -108,5 +112,24 @@ export default function InfoBlocks({ showImageRight = false }) {
         />
       </div>
     </div>
+  );
+}
+
+export default function InfoBlocksContainer({
+  imageUrl,
+  data,
+  showImageRight,
+}) {
+  return (
+    <>
+      {data.map((item, index) => (
+        <InfoBlocks
+          key={index}
+          data={item}
+          imageUrl={imageUrl}
+          showImageRight={showImageRight}
+        />
+      ))}
+    </>
   );
 }

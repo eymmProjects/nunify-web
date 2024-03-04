@@ -1,9 +1,7 @@
 "use client";
-import { useEffect, useState } from "react";
-import { Dialog } from "@headlessui/react";
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import { ChevronRightIcon } from "@heroicons/react/20/solid";
+
 import VideoPlaceholder from "@/public/Images/Video-placeholder.png";
+import { FaAdversal } from "react-icons/fa";
 
 import Image from "next/image";
 import { CheckIcon } from "@heroicons/react/20/solid";
@@ -16,7 +14,6 @@ export default function InfoBlocksHeader({ showImageRight = false }) {
       link: "/services/it-consulting-services-for-businesses#",
     },
   ];
-  // console.log("imageSrc", imageSrc);
   const button = {
     link: "#",
   };
@@ -29,14 +26,15 @@ export default function InfoBlocksHeader({ showImageRight = false }) {
     >
       <div className="pt-14 mx-auto max-w-2xl lg:text-center">
         <p className="mt-2 text-3xl font-bold tracking-tight text-primary sm:text-4xl">
-          Elevate Your Event Experience with our Event Technology Platform{" "}
+          Turn all of your investment tasks into single click automations.
         </p>
         <h2 className="text-base font-semibold leading-7 text-secondary mt-2 ">
-          To power your next In-Person, Virtual and Hybrid Event{" "}
+          All connected and working together
         </h2>
         <p className="mt-6 text-lg leading-8 text-gray-600">
-          Whether you’re getting started or an established pro, our powerful
-          event management platform helps with every phase of event cycle.
+          Whether your just getting started or a seasoned veteran, Our powerful
+          Real Estate Investment System will handle every aspect of your
+          business.
         </p>
       </div>
       <div
@@ -54,11 +52,12 @@ export default function InfoBlocksHeader({ showImageRight = false }) {
             showImageRight ? "lg:order-last text-white" : ""
           }`}
         >
-          <div className={`py-3 px-3 lg:col-span-2 lg:px-8 `}>
-            <CheckIcon
+          <div className={`py-3 px-3  lg:col-span-2 lg:px-8 `}>
+            <FaAdversal
+              size={50}
               className={`${
                 showImageRight
-                  ? " text-white max-h-20 object-contain lg:col-span-1"
+                  ? " text-white object-contain lg:col-span-1"
                   : "max-h-20 object-contain bg-white text-primary lg:col-span-1 rounded-lg shadow-xl"
               }`}
             />
@@ -72,7 +71,7 @@ export default function InfoBlocksHeader({ showImageRight = false }) {
             }
            `}
             >
-              VIRTUAL STAGE
+              MARKETING AND ADVERTISING
             </h2>
             <h2
               className={`${
@@ -81,7 +80,7 @@ export default function InfoBlocksHeader({ showImageRight = false }) {
                   : "text-2xl font-semibold leading-10 text-primary"
               } `}
             >
-              Your gateway to a better livestream & On-demand video experienc
+              Create a website, branded to you. With a single click.
             </h2>
 
             <h2
@@ -91,11 +90,32 @@ export default function InfoBlocksHeader({ showImageRight = false }) {
                   : "mt-3 text-md   font-normal leading-7 text-gray-600"
               } `}
             >
-              Our live & on-demand video solution is built for events, not
-              meetings. We know you need flexible streaming experiences – go
-              live from a web-camera or a studio or stream a 4K video with no
-              lag/sound issues or integrate Zoom. We have all video capabilities
-              to streamline your virtual experience and wow remote guests.
+              Inbound warm leads are the life blood of any business, and yours
+              is no different. With one click of a button we create a branded
+              website for you. Where potential sellers can submit their property
+              for you to buy. This not only improves credibility, but gives you
+              a stream of warm leads coming in.
+            </h2>
+            <h2
+              className={`${
+                showImageRight
+                  ? "mt-3 text-md   font-medium leading-7 text-white"
+                  : "mt-3 text-md   font-normal leading-7 text-gray-600"
+              } `}
+            >
+              If you want more leads you can purchase one of our advertising
+              packages and we will send paid traffic to your site.
+            </h2>
+            <h2
+              className={`${
+                showImageRight
+                  ? "mt-3 text-md   font-medium leading-7 text-white"
+                  : "mt-3 text-md   font-normal leading-7 text-gray-600"
+              } `}
+            >
+              Don’t want to follow up with your leads? Just turn on our AI
+              automated follow up. And our AI will have a conversation to
+              qualify the lead automatically.
             </h2>
             <ul
               role="list"
