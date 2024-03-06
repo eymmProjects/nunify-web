@@ -199,8 +199,7 @@ export default function Header() {
                 Creating a website for inbound marketing, AI auto Follow up,
                 Data Pull and skiptracing, Cold Callers, Lending, Dispo,
                 Contracts and more. Our system will handle every step of your
-                Real Estate Investing business all in one place and all with a
-                single click of a button.
+                Real Estate Investing business all in one place.
               </p>
               <div className="mt-10 flex  items-center ">
                 <a
