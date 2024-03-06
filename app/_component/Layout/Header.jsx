@@ -14,7 +14,7 @@ import Link from "next/link";
 
 const navigation = [
   { name: "Solutions", href: "#" },
-  { name: "Pricing", href: "#" },
+  { name: "Pricing", href: "/pricing" },
   { name: "Blog", href: "#" },
   { name: "Company", href: "#" },
 ];
@@ -26,6 +26,7 @@ const dropdownMenuItems = [
   { href: "/manpower", label: "Manpower" },
   { href: "/financing", label: "Financing" },
   { href: "/dispo", label: "Dispo" },
+  { href: "/tools", label: "Tools" },
 ];
 
 function classNames(...classes) {
@@ -92,16 +93,15 @@ export default function Header() {
               </a>
             </div>
             {navigation.map((item) => (
-              <a
+              <Link
                 key={item.name}
                 href={item.href}
+                as={item.href}
                 className="text-sm font-semibold leading-6 text-white"
               >
                 {item.name}
-              </a>
+              </Link>
             ))}
-
-            {/* dropdown menu end */}
           </div>
           {/* dropdown menuss  */}
           {/* // Dropdown menu component */}

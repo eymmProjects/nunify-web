@@ -68,11 +68,7 @@ export default function Home() {
       <Header />
       <LogoCloud text=" As featured on the following outlets​" />
       <InfoBlocksHeader />
-      <InfoBlocksContainer
-        imageUrl={LogoPlaceholder}
-        data={infoBlocksData_1}
-        showImageRight={true}
-      />
+
       <InfoBlocksContainer
         imageUrl={LogoPlaceholder}
         data={infoBlocksData_2}
