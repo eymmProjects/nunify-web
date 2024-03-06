@@ -189,7 +189,7 @@ export default function Header() {
           <div className="mx-auto max-w-2xl lg:mx-0 lg:grid lg:max-w-none lg:grid-cols-2 lg:gap-x-16 lg:gap-y-6 xl:grid-cols-1 xl:grid-rows-1 xl:gap-x-8">
             <div className="mt-6 max-w-xl lg:mt-0 xl:col-end-1 xl:row-start-1">
               <h1 className="max-w-2xl text-4xl font-bold tracking-tight text-white sm:text-6xl lg:col-span-2 xl:col-auto">
-                Single Click Real Estate
+                All in One Real Estate
                 <span className="text-textCyan">Investing Software</span>
               </h1>
               <p className="text-lg leading-8 text-white my-8">
@@ -199,7 +199,7 @@ export default function Header() {
                 Creating a website for inbound marketing, AI auto Follow up,
                 Data Pull and skiptracing, Cold Callers, Lending, Dispo,
                 Contracts and more. Our system will handle every step of your
-                Real Estate Investing business all in one place.
+                Real Estate Investing business.
               </p>
               <div className="mt-10 flex  items-center ">
                 <a
