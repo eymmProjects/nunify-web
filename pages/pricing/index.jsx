@@ -29,6 +29,16 @@ export const Pricing = () => {
           <PricingCard />
         </div>
       </div>
+      <div className="bg-white/95 px-6 py-12 sm:py-22 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <PricingCard />
+        </div>
+      </div>
+      <div className="bg-white/95 px-6 py-12 sm:py-22 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <PricingCard />
+        </div>
+      </div>
       <Footer />
     </main>
   );

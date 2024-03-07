@@ -7,23 +7,13 @@ import { ChevronRightIcon } from "@heroicons/react/24/outline";
 const product = {
   name: "Event App Pricing",
   price: "$220",
-  description:
-    "The Application UI Icon Pack comes with over 200 icons in 3 styles: outline, filled, and branded. This playful icon pack is tailored for complex application user interfaces with a friendly and legible look.",
+
   highlights: [
     "200+ SVG icons in 3 unique styles",
     "Compatible with Figma, Sketch, and Adobe XD",
     "Drawn on 24 x 24 pixel grid",
   ],
   addons: ["Expo", "Web app", "White-label", "Live Stream", "24x7 Support"],
-  imageSrc:
-    "https://tailwindui.com/img/ecommerce-images/product-page-05-product-01.jpg",
-  imageAlt:
-    "Sample of 30 icons with friendly and fun details in outline, filled, and brand color styles.",
-};
-const license = {
-  href: "#",
-  summary:
-    "For personal and professional use. You cannot resell or redistribute these icons in their original or modified state.",
 };
 
 export default function PricingCard() {
@@ -91,17 +81,28 @@ export default function PricingCard() {
             </h1>
             <div className="my-5  items-center ">
               <p className="mt-6 text-lg leading-8 text-gray-600">150 Logins</p>
-
-              <a
-                href="#"
-                className=" mt-5 inline-flex rounded-full bg-textCyan px-8 py-4 text-sm font-semibold text-primary shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:text-white focus-visible:outline-indigo-600 hover:text-white"
-              >
-                View Your Price
-                <ChevronRightIcon
-                  className="  h-5 w-5 text-primary"
-                  aria-hidden="true"
-                />
-              </a>
+              <div className="flex flex-col text-center">
+                <a
+                  href="#"
+                  className="mx-auto  mt-5 inline-flex rounded-full bg-textCyan px-8 py-4 text-sm font-semibold text-primary shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:text-white focus-visible:outline-indigo-600 hover:text-white"
+                >
+                  Watch Demo
+                  <ChevronRightIcon
+                    className="  h-5 w-5 text-primary"
+                    aria-hidden="true"
+                  />
+                </a>
+                <a
+                  href="#"
+                  className="mx-auto mt-5 inline-flex rounded-full bg-textCyan px-8 py-4 text-sm font-semibold text-primary shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:text-white focus-visible:outline-indigo-600 hover:text-white"
+                >
+                  Create Account
+                  <ChevronRightIcon
+                    className="  h-5 w-5 text-primary"
+                    aria-hidden="true"
+                  />
+                </a>
+              </div>
             </div>
 
             <p className="mt-2 text-sm text-gray-500"></p>
